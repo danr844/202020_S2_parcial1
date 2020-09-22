@@ -3,17 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.parcial1.dtos;
+package co.edu.uniandes.csw.parcial1.entities;
 
-import co.edu.uniandes.csw.parcial1.entities.MedicoEntity;
 import java.io.Serializable;
+import javax.persistence.Entity;
 
 /**
  *
- * @author josejbocanegra
+ * @author DAniel Angel 
  */
-public class MedicoDTO implements Serializable {
+@Entity
+public class MedicoEntity extends BaseEntity  implements Serializable{
 
+    
+    private String nombre;
+    private String apellido; 
+    private String registroMedico;
+    private String especialidad;
+    private Long medicoID;
+    
     /**
      * @return the nombre
      */
@@ -83,37 +91,5 @@ public class MedicoDTO implements Serializable {
     public void setMedicoID(Long medicoID) {
         this.medicoID = medicoID;
     }
-     private String nombre;
-    private String apellido; 
-    private String registroMedico;
-    private String especialidad;
-    private Long medicoID;
     
-        public MedicoDTO(){
-    
-    }
-    public MedicoDTO(MedicoEntity blogEntity) {
-      if (blogEntity != null) {
-            this.medicoID = blogEntity.getMedicoID();
-            this.nombre = blogEntity.getNombre();
-            this.apellido = blogEntity.getApellido();
-            this.registroMedico = blogEntity.getRegistroMedico();
-            this.especialidad = blogEntity.getEspecialidad();
-            
-      }      
-        
-    }
-    public MedicoEntity toEntity() {
-    MedicoEntity blogEntity = new MedicoEntity();
-    blogEntity.setApellido(this.getApellido());
-        blogEntity.setNombre(this.getNombre());
-        blogEntity.setEspecialidad(this.getEspecialidad());
-        blogEntity.setMedicoID(this.getMedicoID());
-                blogEntity.setRegistroMedico(this.getRegistroMedico());
-
-
-
-
-        return blogEntity;
-    }
 }

@@ -46,11 +46,11 @@ public abstract class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Long getId() {
+    public Long getMedicoID() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setMedicoID(Long id) {
         this.id = id;
     }
 
@@ -71,8 +71,8 @@ public abstract class BaseEntity implements Serializable {
 
     @Override
     public int hashCode() {
-        if (this.getId() != null) {
-            return this.getId().hashCode();
+        if (this.getMedicoID() != null) {
+            return this.getMedicoID().hashCode();
         }
         return super.hashCode();
     }
